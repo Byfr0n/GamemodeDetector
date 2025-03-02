@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "gamemodedetector",
+  "version": "${version}",
+  "name": "GamemodeDetector",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/gamemodedetector/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.byfr0n.gamemodedetector.client.GamemodedetectorClient"
+    ],
+    "main": [
+      "com.byfr0n.gamemodedetector.Gamemodedetector"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
