@@ -6,20 +6,32 @@
   "description": "",
   "authors": [],
   "contact": {},
-  "license": "All-Rights-Reserved",
-  "icon": "assets/gamemodedetector/icon.png",
+  "license": "MIT",
+  "icon": "assets/gamemodedetector/textures/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "com.byfr0n.gamemodedetector.client.GamemodedetectorClient"
-    ],
-    "main": [
       "com.byfr0n.gamemodedetector.Gamemodedetector"
-    ]
+    ],
+    "modmenu": [ "com.byfr0n.gamemodedetector.modmenu.ModMenuIntegration" ]
   },
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "${minecraft_version}",
+    "modmenu": "*",
+    "cloth-config": "*"
+  },
+  "custom": {
+    "entrypoint": "com.byfr0n.gamemodedetector.modmenu.ModMenuIntegration",
+    "modmenu": {
+      "badges": ["client"],
+      "api": "true",
+      "links": {
+        "modmenu.discord": "https://discord.gg/yourdiscord",
+        "modmenu.source": "https://github.com/yourrepo"
+      }
+    }
   }
+
 }

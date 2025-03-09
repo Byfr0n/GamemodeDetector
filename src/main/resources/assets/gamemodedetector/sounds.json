@@ -1,0 +1,8 @@
+{
+  "gamemodeswitch": {
+    "category": "player",
+    "sounds": [
+      "gamemodedetector:gamemode_switch"
+    ]
+  }
+}
