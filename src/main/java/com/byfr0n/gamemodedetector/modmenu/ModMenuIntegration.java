@@ -21,27 +21,27 @@ public class ModMenuIntegration implements ModMenuApi {
         builder.getOrCreateCategory(Text.of("General"))
                 .addEntry(builder.entryBuilder()
                         .startBooleanToggle(Text.of("Sound Effect"), Gamemodedetector.CONFIG.enableSound)
-                        .setDefaultValue(true)
                         .setSaveConsumer(value -> Gamemodedetector.CONFIG.enableSound = value)
                         .build());
+
         builder.getOrCreateCategory(Text.of("General"))
                 .addEntry(builder.entryBuilder()
                         .startBooleanToggle(Text.of("Visual Notifications"), Gamemodedetector.CONFIG.visualNotification)
-                        .setDefaultValue(true)
-                        .setSaveConsumer(value -> Gamemodedetector.CONFIG.enableSound = value)
+                        .setSaveConsumer(value -> Gamemodedetector.CONFIG.visualNotification = value)
                         .build());
+
         builder.getOrCreateCategory(Text.of("General"))
                 .addEntry(builder.entryBuilder()
                         .startBooleanToggle(Text.of("Chat Notifications"), Gamemodedetector.CONFIG.chatNotification)
-                        .setDefaultValue(true)
-                        .setSaveConsumer(value -> Gamemodedetector.CONFIG.enableSound = value)
+                        .setSaveConsumer(value -> Gamemodedetector.CONFIG.chatNotification = value)
                         .build());
+
         builder.getOrCreateCategory(Text.of("General"))
                 .addEntry(builder.entryBuilder()
                         .startBooleanToggle(Text.of("Debug"), Gamemodedetector.CONFIG.debugLogs)
-                        .setDefaultValue(true)
-                        .setSaveConsumer(value -> Gamemodedetector.CONFIG.enableSound = value)
+                        .setSaveConsumer(value -> Gamemodedetector.CONFIG.debugLogs = value)
                         .build());
+
         return builder.build();
     }
 }
