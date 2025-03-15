@@ -1,8 +1,8 @@
-package com.byfr0n.gamemodedetector.rendering;
+package byfr0n.gamemodedetector.rendering;
 
-import com.byfr0n.gamemodedetector.Gamemodedetector;
-import com.byfr0n.gamemodedetector.notification.ScreenNotification;
-import com.byfr0n.gamemodedetector.utils.TweenUtils;
+import byfr0n.gamemodedetector.Gamemodedetector;
+import byfr0n.gamemodedetector.notification.ScreenNotification;
+import byfr0n.gamemodedetector.utils.TweenUtils;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 

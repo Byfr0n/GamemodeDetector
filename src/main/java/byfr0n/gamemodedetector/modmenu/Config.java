@@ -1,4 +1,4 @@
-package com.byfr0n.gamemodedetector.modmenu;
+package byfr0n.gamemodedetector.modmenu;
 
 public class Config {
     public boolean enableSound = true;

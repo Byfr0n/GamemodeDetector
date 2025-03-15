@@ -9,11 +9,16 @@
   "license": "MIT",
   "icon": "assets/gamemodedetector/textures/icon.png",
   "environment": "client",
+  "mixins": [
+    "gamemodedetector.mixins.json"
+  ],
   "entrypoints": {
     "client": [
-      "com.byfr0n.gamemodedetector.Gamemodedetector"
+      "byfr0n.gamemodedetector.Gamemodedetector"
     ],
-    "modmenu": [ "com.byfr0n.gamemodedetector.modmenu.ModMenuIntegration" ]
+    "modmenu": [
+      "byfr0n.gamemodedetector.modmenu.ModMenuIntegration"
+    ]
   },
   "depends": {
     "fabricloader": ">=${loader_version}",
@@ -28,8 +33,7 @@
       "badges": ["client"],
       "api": "true",
       "links": {
-        "modmenu.discord": "https://discord.gg/yourdiscord",
-        "modmenu.source": "https://github.com/yourrepo"
+        "modmenu.source": "https://github.com/Byfr0n/GamemodeDetector"
       }
     }
   }

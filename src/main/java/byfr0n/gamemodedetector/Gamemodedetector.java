@@ -1,16 +1,18 @@
-package com.byfr0n.gamemodedetector;
+package byfr0n.gamemodedetector;
 
-import com.byfr0n.gamemodedetector.modmenu.Config;
-import com.byfr0n.gamemodedetector.notification.ChatNotification;
-import com.byfr0n.gamemodedetector.rendering.NotificationRenderer;
-import com.byfr0n.gamemodedetector.utils.PlayerUtils;
-import com.byfr0n.gamemodedetector.utils.SoundUtils;
+import byfr0n.gamemodedetector.modmenu.Config;
+import byfr0n.gamemodedetector.notification.ChatNotification;
+import byfr0n.gamemodedetector.rendering.NotificationRenderer;
+import byfr0n.gamemodedetector.utils.PlayerUtils;
+import byfr0n.gamemodedetector.utils.SoundUtils;
+import byfr0n.gamemodedetector.utils.TabRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.PlayerListEntry;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.MutableText;
+import net.minecraft.text.Text;
 import net.minecraft.world.GameMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +24,8 @@ import java.util.UUID;
 public class Gamemodedetector implements ClientModInitializer {
     public static final Config CONFIG = new Config();
     public static final Logger LOGGER = LoggerFactory.getLogger("Gamemode Detector");
+
+    public static TabRenderer tabRenderer = new TabRenderer();
 
     private static final Map<UUID, GameMode> lastGamemodes = new HashMap<>();
 
@@ -35,6 +39,8 @@ public class Gamemodedetector implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (client.world == null || client.getNetworkHandler() == null) return;
+
+
 
             for (PlayerEntity player : client.world.getPlayers()) {
                 if (player == client.player) continue;
@@ -52,4 +58,5 @@ public class Gamemodedetector implements ClientModInitializer {
             }
         });
     }
+
 }

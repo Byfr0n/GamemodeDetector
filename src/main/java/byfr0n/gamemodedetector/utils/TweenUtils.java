@@ -1,4 +1,4 @@
-package com.byfr0n.gamemodedetector.utils;
+package byfr0n.gamemodedetector.utils;
 
 public class TweenUtils {
 

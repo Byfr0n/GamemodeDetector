@@ -1,6 +1,6 @@
-package com.byfr0n.gamemodedetector.modmenu;
+package byfr0n.gamemodedetector.modmenu;
 
-import com.byfr0n.gamemodedetector.Gamemodedetector;
+import byfr0n.gamemodedetector.Gamemodedetector;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;

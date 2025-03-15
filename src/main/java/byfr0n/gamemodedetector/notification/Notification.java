@@ -1,4 +1,4 @@
-package com.byfr0n.gamemodedetector.notification;
+package byfr0n.gamemodedetector.notification;
 
 public abstract class Notification {
     protected final String message;

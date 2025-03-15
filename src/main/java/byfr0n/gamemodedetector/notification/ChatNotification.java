@@ -1,6 +1,6 @@
-package com.byfr0n.gamemodedetector.notification;
+package byfr0n.gamemodedetector.notification;
 
-import com.byfr0n.gamemodedetector.Gamemodedetector;
+import byfr0n.gamemodedetector.Gamemodedetector;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 
