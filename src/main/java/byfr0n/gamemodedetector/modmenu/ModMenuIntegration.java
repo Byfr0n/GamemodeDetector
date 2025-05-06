@@ -42,6 +42,12 @@ public class ModMenuIntegration implements ModMenuApi {
                         .setSaveConsumer(value -> Gamemodedetector.CONFIG.debugLogs = value)
                         .build());
 
+        builder.getOrCreateCategory(Text.of("General"))
+                .addEntry(builder.entryBuilder()
+                        .startBooleanToggle(Text.of("Ignore Local Player"), Gamemodedetector.CONFIG.ignoreLocalPlayer)
+                        .setSaveConsumer(value -> Gamemodedetector.CONFIG.ignoreLocalPlayer = value)
+                        .build());
+
         return builder.build();
     }
 }

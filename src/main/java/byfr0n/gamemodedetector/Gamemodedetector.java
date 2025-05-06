@@ -1,5 +1,6 @@
 package byfr0n.gamemodedetector;
 
+import net.minecraft.text.Text;
 import byfr0n.gamemodedetector.modmenu.Config;
 import byfr0n.gamemodedetector.notification.ChatNotification;
 import byfr0n.gamemodedetector.rendering.NotificationRenderer;
@@ -9,10 +10,7 @@ import byfr0n.gamemodedetector.utils.TabRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
-import net.minecraft.client.network.PlayerListEntry;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
 import net.minecraft.world.GameMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,15 +41,15 @@ public class Gamemodedetector implements ClientModInitializer {
 
 
             for (PlayerEntity player : client.world.getPlayers()) {
-                if (player == client.player) continue;
+                if (CONFIG.ignoreLocalPlayer && player == client.player) continue;
 
                 GameMode currentGamemode = PlayerUtils.getPlayerGamemode(player);
                 UUID playerId = player.getUuid();
 
                 if (currentGamemode != null && currentGamemode != lastGamemodes.get(playerId)) {
                     SoundUtils.playGamemodeSound();
-                    new ChatNotification(player.getName().getString() + " switched to " + currentGamemode.getName()).send();
-                    NotificationRenderer.addNotification(player.getName().getString() + " changed gamemode!");
+                    new ChatNotification(player.getName().getString() + " switched to " + currentGamemode.getTranslatableName().getString()).send();
+                    NotificationRenderer.addNotification(player.getName().getString() + " changed to " + currentGamemode.getTranslatableName().getString());
 
                     lastGamemodes.put(playerId, currentGamemode);
                 }

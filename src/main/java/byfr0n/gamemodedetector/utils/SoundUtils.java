@@ -3,10 +3,10 @@ package byfr0n.gamemodedetector.utils;
 import byfr0n.gamemodedetector.Gamemodedetector;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.PositionedSoundInstance;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
-import net.minecraft.registry.Registries;
 
 import static byfr0n.gamemodedetector.Gamemodedetector.LOGGER;
 
