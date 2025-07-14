@@ -23,7 +23,7 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
-    modImplementation "me.shedaniel.cloth:cloth-config-fabric:18.0.145"
+    modImplementation "me.shedaniel.cloth:cloth-config-fabric:19.0.147"
 }
 
 processResources {
