@@ -11,10 +11,10 @@ import java.util.List;
 
 public class NotificationRenderer {
     private static final List<ScreenNotification> activeNotifications = new ArrayList<>();
-    private static final int NOTIFICATION_DURATION = 5000; // 5 seconds
-    private static final int NOTIFICATION_ANIMATION_DURATION = 500; // 0.5 seconds
-    private static final int NOTIFICATION_HEIGHT = 12; // Height of each notification
-    private static final int NOTIFICATION_SPACING = 5; // Spacing between notifications
+    private static final int NOTIFICATION_DURATION = 5000;
+    private static final int NOTIFICATION_ANIMATION_DURATION = 500;
+    private static final int NOTIFICATION_HEIGHT = 12;
+    private static final int NOTIFICATION_SPACING = 5;
 
     public static void addNotification(String message) {
         activeNotifications.add(new ScreenNotification(message, System.currentTimeMillis()));
@@ -29,7 +29,6 @@ public class NotificationRenderer {
         int y = 20;
         long currentTime = System.currentTimeMillis();
 
-        // Remove notifications that have expired
         activeNotifications.removeIf(notification -> currentTime - notification.getStartTime() > NOTIFICATION_DURATION);
 
         for (ScreenNotification notification : activeNotifications) {

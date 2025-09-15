@@ -15,9 +15,6 @@ import java.util.List;
 
 @Mixin(PlayerListHud.class)
 public abstract class PlayerListHudMixin {
-    @Shadow
-    protected abstract List<PlayerListEntry> collectPlayerEntries();
-
     @Inject(method = "getPlayerName", at = @At("HEAD"), cancellable = true)
     public void getPlayerName(PlayerListEntry playerListEntry, CallbackInfoReturnable<Text> info) {
         TabRenderer tabRenderer = Gamemodedetector.tabRenderer;

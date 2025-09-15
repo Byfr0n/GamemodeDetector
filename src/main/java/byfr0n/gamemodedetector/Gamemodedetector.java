@@ -1,6 +1,5 @@
 package byfr0n.gamemodedetector;
 
-import net.minecraft.text.Text;
 import byfr0n.gamemodedetector.modmenu.Config;
 import byfr0n.gamemodedetector.notification.ChatNotification;
 import byfr0n.gamemodedetector.rendering.NotificationRenderer;
