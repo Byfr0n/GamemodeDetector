@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.UUID;
 
 public class Gamemodedetector implements ClientModInitializer {
-    public static final Config CONFIG = new Config();
+    public static final Config CONFIG = Config.load();
     public static final Logger LOGGER = LoggerFactory.getLogger("Gamemode Detector");
 
     public static TabRenderer tabRenderer = new TabRenderer();
@@ -37,8 +37,6 @@ public class Gamemodedetector implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (client.world == null || client.getNetworkHandler() == null) return;
 
-
-
             for (PlayerEntity player : client.world.getPlayers()) {
                 if (CONFIG.ignoreLocalPlayer && player == client.player) continue;
 
@@ -55,5 +53,4 @@ public class Gamemodedetector implements ClientModInitializer {
             }
         });
     }
-
 }

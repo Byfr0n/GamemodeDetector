@@ -16,7 +16,8 @@ public class ModMenuIntegration implements ModMenuApi {
     private Screen createConfigScreen(Screen parent) {
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
-                .setTitle(Text.of("Gamemode Detector Settings"));
+                .setTitle(Text.of("Gamemode Detector Settings"))
+                .setSavingRunnable(Gamemodedetector.CONFIG::save);
 
         builder.getOrCreateCategory(Text.of("General"))
                 .addEntry(builder.entryBuilder()
