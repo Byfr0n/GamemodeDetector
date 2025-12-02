@@ -45,8 +45,9 @@ public class Gamemodedetector implements ClientModInitializer {
 
                 if (currentGamemode != null && currentGamemode != lastGamemodes.get(playerId)) {
                     SoundUtils.playGamemodeSound();
-                    new ChatNotification(player.getName().getString() + " switched to " + currentGamemode.getTranslatableName().getString()).send();
-                    NotificationRenderer.addNotification(player.getName().getString() + " changed to " + currentGamemode.getTranslatableName().getString());
+                    String text = player.getName().getString() + " switched to " + currentGamemode.getTranslatableName().getString();
+                    new ChatNotification(text).send();
+                    NotificationRenderer.addNotification(text);
 
                     lastGamemodes.put(playerId, currentGamemode);
                 }

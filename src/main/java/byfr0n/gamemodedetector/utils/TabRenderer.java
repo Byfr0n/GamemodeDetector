@@ -11,7 +11,7 @@ public class TabRenderer {
         Text name;
 
         name = playerListEntry.getDisplayName();
-        if (name == null) name = Text.literal(playerListEntry.getProfile().getName());
+        if (name == null) name = Text.literal(playerListEntry.getProfile().name());
 
 
         GameMode gm = playerListEntry.getGameMode();
